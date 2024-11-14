@@ -1,17 +1,16 @@
 package org.example.Java_SpringBoot.db;
 
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 @Configuration
-//makes myclass eligible for creating beans
-
 public class GetConnection {
-    //make bean of connection
-    // if i want to make a bean of a predefined class then I can use @Bean annotation
+
     @Bean
     public Connection connection(){
         try{
@@ -22,4 +21,11 @@ public class GetConnection {
         }
 
     }
+    @Bean
+    public DataSource dataSource(){
+       DataSource source= DataSourceBuilder.create().url("jdbc:mysql://127.0.0.1:3306/testdb").username("root").password("root").build();
+
+        return source;
+    }
+
 }

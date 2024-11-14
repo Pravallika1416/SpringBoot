@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class DbRepository implements DBREpo {
-   @Autowired
+   //@Autowired
     private final Connection connection;
 
    //    Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/testdb", "root", "root");

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
-
+@Qualifier(value = "jd")
 public interface DBREpo {
     List<Person> getPersonData();
     int addPerson(Person person);

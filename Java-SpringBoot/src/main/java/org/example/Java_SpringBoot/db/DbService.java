@@ -1,14 +1,17 @@
 package org.example.Java_SpringBoot.db;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+
 public class DbService {
     @Autowired
-    DbRepository dbRepository;
+    @Qualifier("springJDBC")
+    DBREpo dbRepository;
 
     public List<Person> getPersonData() {
         return dbRepository.getPersonData();
